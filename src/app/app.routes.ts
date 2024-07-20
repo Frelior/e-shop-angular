@@ -1,10 +1,13 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HeaderComponent,
+    component: HomePageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
