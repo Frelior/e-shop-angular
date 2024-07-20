@@ -1,24 +1,12 @@
 <div class="inner">
-  <c-carousel [interval]="0">
-    <c-carousel-inner>
-      <c-carousel-item *ngFor="let slide of slides">
-        <img
-          [src]="slide.src"
-          alt="{{ slide.title }}"
-          class="d-block w-100"
-          loading="lazy"
-        />
-      </c-carousel-item>
-    </c-carousel-inner>
-    <c-carousel-control
-      [routerLink]
-      caption="Previous"
-      direction="prev"
-    ></c-carousel-control>
-    <c-carousel-control
-      [routerLink]
-      caption="Next"
-      direction="next"
-    ></c-carousel-control>
-  </c-carousel>
+  <swiper-container
+    speed="2000"
+    loop="true"
+    navigation="true"
+    autoplay-delay="9000"
+  >
+    <swiper-slide><img src="images/1.jpg" alt="" /></swiper-slide>
+    <swiper-slide><img src="images/2.jpg" alt="" /></swiper-slide>
+    <swiper-slide><img src="images/3.jpg" alt="" /></swiper-slide>
+  </swiper-container>
 </div>

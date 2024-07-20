@@ -1,21 +1,6 @@
-c-carousel-inner img {
+swiper-container {
+  background-color: black;
   height: 26rem;
-  width: 100%;
-}
-
-c-carousel {
-  height: 26rem;
-}
-
-.carousel-control-prev::before,
-.carousel-control-next::before {
-  content: "";
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  width: 4rem;
-  height: 4rem;
-  border: 3px solid white;
-  border-radius: 50%;
+  --swiper-navigation-color: white;
+  --swiper-navigation-sides-offset: 2.4rem;
 }
