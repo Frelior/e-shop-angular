@@ -17,7 +17,5 @@ export class CarouselComponent {
 
   constructor() {
     this.carouselService.getImages().subscribe((data) => (this.images = data));
-    console.log(this.images);
-    
   }
 }
