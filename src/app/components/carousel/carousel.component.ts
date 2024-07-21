@@ -1,5 +1,7 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CarouselService } from '../../services/carousel/carousel.service';
+import { log } from 'console';
 
 @Component({
   selector: 'app-carousel',
@@ -9,4 +11,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./carousel.component.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class CarouselComponent {}
+export class CarouselComponent {
+  carouselService = inject(CarouselService);
+  images: any = [];
+
+  constructor() {
+    this.carouselService.getImages().subscribe((data) => (this.images = data));
+    console.log(this.images);
+    
+  }
+}
