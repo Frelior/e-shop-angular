@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
 import { HorizontalScrollerComponent } from '../../components/horizontal-scroller/horizontal-scroller.component';
+import { ProductsService } from '../../services/products/products.service';
+
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -8,4 +10,14 @@ import { HorizontalScrollerComponent } from '../../components/horizontal-scrolle
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
-export class HomePageComponent {}
+export class HomePageComponent {
+  productsService = inject(ProductsService);
+  categories: any = [];
+
+  constructor() {
+    this.productsService
+      .getCategories()
+      .subscribe((data) => (this.categories = data));
+    console.log(this.categories);
+  }
+}

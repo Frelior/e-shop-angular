@@ -1,17 +1,15 @@
 <div class="inner">
   <swiper-container
     class="mySwiper"
-    space-between="30"
+    space-between="16"
     slides-per-view="6"
     navigation
+    mousewheel="true"
   >
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
-    <swiper-slide><app-category-item></app-category-item></swiper-slide>
+    @for (item of data; track item.url) {
+    <swiper-slide>
+      <app-category-item [item]="item"></app-category-item>
+    </swiper-slide>
+    }
   </swiper-container>
 </div>
