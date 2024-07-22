@@ -1,7 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselService } from '../../services/carousel/carousel.service';
-import { log } from 'console';
 
 @Component({
   selector: 'app-carousel',
