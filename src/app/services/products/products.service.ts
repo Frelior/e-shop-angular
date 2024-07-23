@@ -19,4 +19,12 @@ export class ProductsService {
   getProductsByCategory(category: string) {
     return this.http.get(`${this.baseUrl}/category/${category}`);
   }
+
+  // im getting random range from whole products base, cause all products in base have discount
+  getRandomDiscountProducts(amount: number) {
+    const maxSkip = 194 - amount;
+    const skip = Math.floor(Math.random() * (maxSkip + 1));
+    console.log(`skip: ${skip}, maxSkip: ${maxSkip}`);
+    return this.http.get(`${this.baseUrl}?limit=${amount}&skip=${skip}`);
+  }
 }

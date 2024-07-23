@@ -13,11 +13,18 @@ import { ProductsService } from '../../services/products/products.service';
 export class HomePageComponent {
   productsService = inject(ProductsService);
   categories: any = [];
+  discountProducts: any = [];
 
   constructor() {
     this.productsService
       .getCategories()
       .subscribe((data) => (this.categories = data));
     console.log(this.categories);
+
+    this.productsService
+      .getRandomDiscountProducts(10)
+      .subscribe((data) => (this.discountProducts = data));
+      console.log(this.discountProducts);
+      
   }
 }
