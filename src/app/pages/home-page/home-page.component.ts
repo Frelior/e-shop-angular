@@ -26,15 +26,19 @@ export class HomePageComponent {
   discountProducts: any = [];
 
   constructor() {
-    this.productsService
-      .getCategories()
-      .subscribe((data) => (this.categories = data));
+    this.productsService.getCategories().subscribe((data) => {
+      this.categories = data;
+
+      for (const item of this.categories) {
+        item.formattedName = item.name.replace(' ', '+');
+        console.log(item.formattedName);
+      }
+    });
 
     this.productsService
       .getRandomDiscountProducts(10)
       .subscribe((data: ProductsResponse) => {
         this.discountProducts = data.products;
-        console.log(this.discountProducts);
       });
   }
 }

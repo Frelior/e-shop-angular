@@ -1,29 +1,20 @@
 <div class="product-card">
-  <div class="slider-box">
-    <swiper-container
-      pagination="true"
-      pagination-clickable="true"
-      slides-per-view="1"
-      css-mode="true"
-    >
-      <!-- @for (image of item.thumbnail; track image) {} -->
-      <swiper-slide lazy="true">
-        <img src="{{ item.thumbnail }}" loading="lazy" />
-      </swiper-slide>
-    </swiper-container>
+  <img src="{{ item.thumbnail }}" class="product-card__image" />
 
-    <div class="information">
-      <h3>{{ item.title }}</h3>
-      <div class="price-box">
-        <p class="price">{{ discountPrice }} $</p>
-        <p class="old-price">{{ item.price }} $</p>
-      </div>
-      <div class="availability">
-        <p class="{{ availabilityStatus }}">{{ item.availabilityStatus }}</p>
-        <button>like</button>
-      </div>
+  <div class="product-card__information">
+    <a href="">
+      <h3 class="product-card__title">{{ item.title }}</h3>
+    </a>
+    <div class="price-box">
+      <p class="price-box__new-price">{{ discountPrice }} $</p>
+      <p class="price-box__old-price">{{ item.price }} $</p>
     </div>
-
-    <button class="add-to-cart">Add to cart</button>
+    <p class="product-card__availability">
+      <span class="availability__stock-indicator {{ availabilityStatus }}">
+        {{ item.availabilityStatus }}
+      </span>
+      <button class="availability__like-button"></button>
+    </p>
   </div>
+  <button class="product-card__add-to-cart-button">Add to cart</button>
 </div>

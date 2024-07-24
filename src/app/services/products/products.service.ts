@@ -15,7 +15,6 @@ export class ProductsService {
   }
 
   getCategories() {
-
     return this.http.get<SingleCategory[]>(`${this.baseUrl}/categories`);
   }
 

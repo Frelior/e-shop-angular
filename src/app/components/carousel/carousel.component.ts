@@ -1,6 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselService } from '../../services/carousel/carousel.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-carousel',
@@ -15,6 +16,13 @@ export class CarouselComponent {
   images: any = [];
 
   constructor() {
-    this.carouselService.getImages().subscribe((data) => (this.images = data));
+    this.carouselService.getImages().subscribe(
+      (data) => {
+        this.images = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

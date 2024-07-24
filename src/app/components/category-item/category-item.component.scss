@@ -1,7 +1,6 @@
 .category-item {
   max-height: 24.6rem;
   max-width: 20rem;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -9,8 +8,9 @@
   & img {
     width: 20rem;
     height: 21.1rem;
-    border: 1px solid black;
     border-radius: 0.8rem;
+    object-fit: contain;
+    box-shadow: 0rem 0rem 3rem -25px black;
   }
 
   & p {

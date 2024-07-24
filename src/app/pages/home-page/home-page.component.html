@@ -1,19 +1,25 @@
 <app-carousel></app-carousel>
 
 <!-- categories scroller -->
-<app-horizontal-scroller>
-  @for (item of categories; track item.url) {
-  <swiper-slide>
-    <app-category-item [item]="item"></app-category-item>
-  </swiper-slide>
-  }
-</app-horizontal-scroller>
+<div class="catalog">
+  <h2>Catalog</h2>
+  <app-horizontal-scroller>
+    @for (item of categories; track item.name) {
+    <swiper-slide>
+      <app-category-item [item]="item"></app-category-item>
+    </swiper-slide>
+    }
+  </app-horizontal-scroller>
+</div>
 
 <!-- discount products scroller -->
-<app-horizontal-scroller>
-  @for (item of discountProducts; track item.url) {
-  <swiper-slide>
-    <app-product-card [item]="item" ></app-product-card>
-  </swiper-slide>
-  }
-</app-horizontal-scroller>
+<div class="discounts">
+  <h2>Discount</h2>
+  <app-horizontal-scroller class="hr">
+    @for (item of discountProducts; track item.id) {
+    <swiper-slide>
+      <app-product-card [item]="item"></app-product-card>
+    </swiper-slide>
+    }
+  </app-horizontal-scroller>
+</div>
