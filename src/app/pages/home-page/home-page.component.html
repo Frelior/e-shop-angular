@@ -1,2 +1,19 @@
 <app-carousel></app-carousel>
-<app-horizontal-scroller [data]="categories"></app-horizontal-scroller>
+
+<!-- categories scroller -->
+<app-horizontal-scroller>
+  @for (item of categories; track item.url) {
+  <swiper-slide>
+    <app-category-item [item]="item"></app-category-item>
+  </swiper-slide>
+  }
+</app-horizontal-scroller>
+
+<!-- discount products scroller -->
+ <app-horizontal-scroller>
+  @for (item of discountProducts; track item.url) {
+  <swiper-slide>
+    <app-product-card [item]="item"></app-product-card>
+  </swiper-slide>
+  }
+</app-horizontal-scroller>

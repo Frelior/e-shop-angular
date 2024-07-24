@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryItemComponent } from '../category-item/category-item.component';
 
@@ -10,8 +10,4 @@ import { CategoryItemComponent } from '../category-item/category-item.component'
   styleUrl: './horizontal-scroller.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HorizontalScrollerComponent {
-  @Input() data : any[] = []
-
-  
-}
+export class HorizontalScrollerComponent {}

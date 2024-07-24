@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import SingleCategory from '../../interfaces/singleCategory';
 
 @Component({
   selector: 'app-category-item',
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './category-item.component.scss',
 })
 export class CategoryItemComponent {
-  @Input() item: any;
+  @Input() item!: SingleCategory;
 }

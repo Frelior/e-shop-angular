@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import ProductsResponse from '../../interfaces/productsArray';
+import SingleCategory from '../../interfaces/singleCategory';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,8 @@ export class ProductsService {
   }
 
   getCategories() {
-    return this.http.get(`${this.baseUrl}/categories`);
+
+    return this.http.get<SingleCategory[]>(`${this.baseUrl}/categories`);
   }
 
   getProductsByCategory(category: string) {
@@ -24,7 +27,8 @@ export class ProductsService {
   getRandomDiscountProducts(amount: number) {
     const maxSkip = 194 - amount;
     const skip = Math.floor(Math.random() * (maxSkip + 1));
-    console.log(`skip: ${skip}, maxSkip: ${maxSkip}`);
-    return this.http.get(`${this.baseUrl}?limit=${amount}&skip=${skip}`);
+    return this.http.get<ProductsResponse>(
+      `${this.baseUrl}?limit=${amount}&skip=${skip}`
+    );
   }
 }

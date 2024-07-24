@@ -6,10 +6,6 @@
     navigation
     mousewheel="true"
   >
-    @for (item of data; track item.url) {
-    <swiper-slide>
-      <app-category-item [item]="item"></app-category-item>
-    </swiper-slide>
-    }
+    <ng-content></ng-content>
   </swiper-container>
 </div>
