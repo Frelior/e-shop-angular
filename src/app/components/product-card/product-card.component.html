@@ -6,11 +6,10 @@
       slides-per-view="1"
       css-mode="true"
     >
-      @for (image of item.images; track image) {
+      <!-- @for (image of item.thumbnail; track image) {} -->
       <swiper-slide lazy="true">
-        <img src="{{ image }}" loading="lazy" />
+        <img src="{{ item.thumbnail }}" loading="lazy" />
       </swiper-slide>
-      }
     </swiper-container>
 
     <div class="information">
