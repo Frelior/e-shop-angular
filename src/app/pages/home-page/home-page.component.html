@@ -10,10 +10,10 @@
 </app-horizontal-scroller>
 
 <!-- discount products scroller -->
- <app-horizontal-scroller>
+<app-horizontal-scroller>
   @for (item of discountProducts; track item.url) {
   <swiper-slide>
-    <app-product-card [item]="item"></app-product-card>
+    <app-product-card [item]="item" ></app-product-card>
   </swiper-slide>
   }
 </app-horizontal-scroller>

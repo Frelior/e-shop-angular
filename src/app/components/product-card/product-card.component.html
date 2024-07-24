@@ -1,4 +1,30 @@
 <div class="product-card">
-  <img src="" alt="{{ item.title }}" />
-  <p>{{ item.title }}</p>
+  <div class="slider-box">
+    <swiper-container
+      pagination="true"
+      pagination-clickable="true"
+      slides-per-view="1"
+      css-mode="true"
+    >
+      @for (image of item.images; track image) {
+      <swiper-slide lazy="true">
+        <img src="{{ image }}" loading="lazy" />
+      </swiper-slide>
+      }
+    </swiper-container>
+
+    <div class="information">
+      <h3>{{ item.title }}</h3>
+      <div class="price-box">
+        <p class="price">{{ discountPrice }} $</p>
+        <p class="old-price">{{ item.price }} $</p>
+      </div>
+      <div class="availability">
+        <p class="{{ availabilityStatus }}">{{ item.availabilityStatus }}</p>
+        <button>like</button>
+      </div>
+    </div>
+
+    <button class="add-to-cart">Add to cart</button>
+  </div>
 </div>
