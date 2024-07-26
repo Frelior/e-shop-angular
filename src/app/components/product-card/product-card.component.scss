@@ -55,7 +55,10 @@
       }
     }
 
-    .product-card__availability {
+
+  }
+
+      .product-card__availability {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -90,7 +93,6 @@
         color: orange;
       }
     }
-  }
 
   .product-card__add-to-cart-button {
     width: 100%;
