@@ -1,0 +1,16 @@
+button {
+  width: 100%;
+  padding: 1.4rem 0;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: var(--color-blue);
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 1.4rem;
+  font-weight: normal;
+  transition: background-color 0.05s linear;
+
+  &:active {
+    background-color: var(--color-blue-light);
+  }
+}

@@ -5,11 +5,12 @@ import {
   OnInit,
 } from '@angular/core';
 import SingleProduct from '../../interfaces/singleProduct';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

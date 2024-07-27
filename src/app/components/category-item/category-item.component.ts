@@ -9,6 +9,7 @@ import SingleCategory from '../../interfaces/singleCategory';
   styleUrl: './category-item.component.scss',
 })
 export class CategoryItemComponent {
+
   @Input() item!: SingleCategory;
   imageBaseUrl =
     'https://dummyjson.com/image/300x300/f6f6f6?fontFamily=marhey&text=';

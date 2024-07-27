@@ -1,19 +1,17 @@
-<app-carousel></app-carousel>
+<app-head-banner></app-head-banner>
 
 <!-- categories scroller -->
 <div class="catalog">
   <h2>Catalog</h2>
-  <app-horizontal-scroller>
-    @for (item of categories; track item.name) {
-    <swiper-slide>
-      <app-category-item [item]="item"></app-category-item>
-    </swiper-slide>
-    }
-  </app-horizontal-scroller>
 </div>
 
+<!-- <app-slider
+  [sliderParams]="bannerSliderParams"
+  class="head-banner"
+></app-slider> -->
+
 <!-- discount products scroller -->
-<div class="discounts">
+<!-- <div class="discounts">
   <h2>Discounts</h2>
   <app-horizontal-scroller class="hr">
     @for (item of discountProducts; track item.id) {
@@ -22,4 +20,4 @@
     </swiper-slide>
     }
   </app-horizontal-scroller>
-</div>
+</div> -->
