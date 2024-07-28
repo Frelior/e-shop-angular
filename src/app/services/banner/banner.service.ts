@@ -10,7 +10,7 @@ export class BannerService {
   private http = inject(HttpClient);
   private imagesUrl: string = 'https://picsum.photos/v2/list?page=2&limit=3';
 
-  getImages() {
+  getImages() : string[] | [] {
     let images: string[] | [] = [];
     this.http
       .get<bannerImageObject[]>(this.imagesUrl)

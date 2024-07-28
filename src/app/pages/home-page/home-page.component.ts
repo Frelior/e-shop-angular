@@ -1,15 +1,19 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { ProductsService } from '../../services/products/products.service';
-import { BannerService } from '../../services/banner/banner.service';
 import ProductsResponse from '../../interfaces/productsArray';
 import SingleCategory from '../../interfaces/singleCategory';
-import { HeadBannerComponent } from '../../components/slider/head-banner.component';
-import { bannerSliderParams } from '../../components/slider/swiperParams';
+import { HeadBannerComponent } from '../../components/head-banner/head-banner.component';
+import { HorizontalScrollerComponent } from '../../components/horizontal-scroller/horizontal-scroller.component';
+import { CategoryItemComponent } from '../../components/category-item/category-item.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HeadBannerComponent],
+  imports: [
+    HeadBannerComponent,
+    HorizontalScrollerComponent,
+    CategoryItemComponent,
+  ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -17,6 +21,7 @@ import { bannerSliderParams } from '../../components/slider/swiperParams';
 export class HomePageComponent {
   productsService = inject(ProductsService);
   categories: SingleCategory[] = [];
+  catItems: any[] = [];
   discountProducts: any = [];
 
   constructor() {
@@ -35,5 +40,14 @@ export class HomePageComponent {
         this.discountProducts = data.products;
       });
     //
+    console.log(this.categories);
+
+    for (const item of this.categories) {
+      this.catItems.push(
+        `<app-category-item item="${item}"></app-category-item>`
+      );
+    }
+
+    console.log(this.catItems);
   }
 }

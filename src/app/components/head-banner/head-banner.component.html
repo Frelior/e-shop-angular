@@ -1,7 +1,7 @@
-<swiper-container init="false">
+<swiper-container init="false" #swiper>
   @for (item of headBannerImages; track item) {
   <swiper-slide>
-    <img src="{{ item }}" alt="banner-image" />
+    <img src="{{ item }}" alt="banner-image" loading="lazy" />
   </swiper-slide>
   }
 </swiper-container>

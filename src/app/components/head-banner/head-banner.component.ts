@@ -1,4 +1,10 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { BannerService } from '../../services/banner/banner.service';
 import { bannerSliderParams } from './swiperParams';
 
@@ -12,17 +18,16 @@ import { bannerSliderParams } from './swiperParams';
 })
 export class HeadBannerComponent {
   bannerService = inject(BannerService);
-  swiperElQuery: any;
+  @ViewChild('swiper') swiper!: ElementRef;
   bannerSliderParams = bannerSliderParams;
   headBannerImages: HTMLElement[] | any[] = ['1', '2', '3', '4'];
 
   ngAfterViewInit() {
-    this.swiperElQuery = document.querySelector('swiper-container');
-    Object.assign(this.swiperElQuery, this.bannerSliderParams);
-    this.swiperElQuery.initialize();
+    const swiperElement = this.swiper.nativeElement;
+    Object.assign(swiperElement, this.bannerSliderParams);
+    swiperElement.initialize();
   }
   constructor() {
     this.headBannerImages = this.bannerService.getImages();
-    console.log(this.headBannerImages);
   }
 }

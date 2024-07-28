@@ -1,10 +1,6 @@
-<div class="inner">
-  <swiper-container
-    class="mySwiper"
-    space-between="16"
-    slides-per-view="6"
-    navigation
-  >
-    <ng-content></ng-content>
-  </swiper-container>
-</div>
+<swiper-container init="false" #swiper>
+  @for (item of data; track data.indexOf(item)) {
+  <swiper-slide>{{ item }}</swiper-slide>
+
+  }
+</swiper-container>
